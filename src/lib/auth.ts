@@ -32,7 +32,7 @@ export const getCurrentUser = async () => {
 };
 
 export const onAuthStateChange = (callback: (user: AuthUser | null) => void) => {
-  return supabase.auth.onAuthStateChange((event, session) => {
+  return supabase.auth.onAuthStateChange((_event, session) => {
     if (session?.user) {
       callback({
         id: session.user.id,

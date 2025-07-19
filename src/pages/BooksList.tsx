@@ -22,7 +22,7 @@ export default function BooksList() {
     },
   });
 
-  const filteredBooks = books?.filter(book => 
+  const filteredBooks = books?.filter((book: Book) => 
     statusFilter === 'all' ? true : book.status === statusFilter
   ) || [];
 
@@ -144,7 +144,7 @@ export default function BooksList() {
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filteredBooks.map((book) => (
+          {filteredBooks.map((book: Book) => (
             <div key={book.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden">
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
